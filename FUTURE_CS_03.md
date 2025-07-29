@@ -318,3 +318,16 @@ The hashes match (after decryption), meaning that integrity is 💯!
 - Secure coding principles
  
 ---
+
+
+
+<img width="1366" height="670" alt="uploads" src="https://github.com/user-attachments/assets/c4abf1d4-0b01-466e-84ef-2778797a61f8" />
+<img width="644" height="501" alt="python" src="https://github.com/user-attachments/assets/6037cc35-4791-4075-8394-6dde02e8aa73" />
+<img width="1366" height="644" alt="home" src="https://github.com/user-attachments/assets/35e1e25e-238e-45a8-aa51-152f28b2c2a2" />
+<img width="647" height="175" alt="File Integrity" src="https://github.com/user-attachments/assets/9f758df4-c23f-4038-a2aa-82efd4a33b49" />
+<img width="1366" height="430" alt="enc 1" src="https://github.com/user-attachments/assets/9320288f-9796-451a-bc8a-54c97793465f" />
+<img width="1366" height="459" alt="downloads" src="https://github.com/user-attachments/assets/6ba81ffe-e98a-4478-a2cf-45ccbb8df8e8" />
+<img width="661" height="525" alt="code" src="https://github.com/user-attachments/assets/a9a253e6-d183-449a-850d-ef9d7057b537" />
+<img width="657" height="521" alt="code 2" src="https://github.com/user-attachments/assets/14fc3674-32a2-4cd8-93dc-a9bdda5f7c78" />
+<img width="1366" height="653" alt="AES 2" src="https://github.com/user-attachments/assets/8341324b-683c-4f01-9a7a-66620d92d3d6" />
+<img width="1362" height="694" alt="AES 1" src="https://github.com/user-attachments/assets/97231d87-d552-42a7-9ad5-68795ff89fd8" />
