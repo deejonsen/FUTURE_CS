@@ -12,7 +12,7 @@ This task simulated the role of a SOC analyst handling security events. I config
 
 ## 🧰 Tools & Technologies
 
-- Elastic Stack (ELK Stack)
+- Splunk
 - Sample Log Datasets (Linux syslog, Apache logs)
 - GitHub markdown for documentation
 - Google Docs for incident reports
@@ -56,9 +56,11 @@ This task simulated the role of a SOC analyst handling security events. I config
 **Sample Alerts Investigated:**  
 | Alert Type          | Severity | Source IP       | Details |  
 |---------------------|----------|-----------------|---------|  
-| Failed Logins (100+) | High     | 185.63.92.11   | 15 distinct usernames in 2 mins |  
-| Malware Signature   | Critical | 10.5.22.103    | `Emotet` detected via Snort |  
-| Unusual Data Export | Medium   | 192.168.1.45   | 2GB PDF export at 3 AM |  
+| Failed Logins (100+) | High     | 185.63.92.11   | 15 distinct usernames in 2 mins |
+| Foreign IP Access	  |High      |	               | Suspected compromise |
+| Malware Found	      |Critical	 |                 | Immediate action required |
+| Malware Signature   | Critical | 10.5.22.103     | `Emotet` detected via Snort |  
+| Unusual Data Export | Medium   | 192.168.1.45    | 2GB PDF export at 3 AM |  
 
 **Prioritization Framework:**  
 ```mermaid
