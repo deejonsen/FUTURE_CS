@@ -140,8 +140,20 @@ Over a 5-hour window on July 3rd, 2025, malware detections (Trojan, Rootkit, Ran
 
 ---
 
+## 📊 **SOC Dashboard Metrics**
+
+| Panel Title                    | Description                                     | Example Visualization  |
+|-------------------------------|--------------------------------------------------|------------------------|
+| Malware Alerts by Signature   | Counts of Trojan, Rootkit, etc. per user         | Bar Chart              |
+| Failed Logins Heatmap         | Auth failure frequency per hour per user         | Heatmap                |
+| External IP Access            | Attempts from flagged IPs                        | Table + Severity Tags  |
+| Incident Timeline             | All alert types across time                      | Time Series Line Chart |
+| Severity Breakdown            | Alert counts by High/Medium/Low classification   | Pie or Donut Chart     |
+
+---
+
 **🔗 Attachments**:  
-- [Incident Response Report](reports/incident_response_simulation.pdf)
+- [Incident Response Report](reports/incident_response_simulation.docx)
 --- 
 
 > **Note**: All sensitive data (IPs, hostnames) in screenshots/reports are synthetic.  
