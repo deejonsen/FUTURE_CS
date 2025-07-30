@@ -153,7 +153,7 @@ Over a 5-hour window on July 3rd, 2025, malware detections (Trojan, Rootkit, Ran
 ---
 
 **🔗 Attachments**:  
-- [Incident Response Report](http://github.com/deejonsen/FUTURE_CS/blob/main/Incident%20Response%20Report%20docx%20.md)
+- [Incident Response Report](https://github.com/deejonsen/FUTURE_CS/blob/main/Incident%20Response%20Report.md)
 --- 
 
 > **Note**: All sensitive data (IPs, hostnames) in screenshots/reports are synthetic.  
