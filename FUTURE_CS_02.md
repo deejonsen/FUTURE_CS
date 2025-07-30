@@ -154,6 +154,13 @@ Over a 5-hour window on July 3rd, 2025, malware detections (Trojan, Rootkit, Ran
 
 **🔗 Attachments**:  
 - [Incident Response Report](https://github.com/deejonsen/FUTURE_CS/blob/main/Incident%20Response%20Report.md)
+- <img width="1366" height="719" alt="SIEM 6" src="https://github.com/user-attachments/assets/8b55a4c9-f327-44de-a027-7a80d21321df" />
+<img width="1366" height="720" alt="SIEM 5" src="https://github.com/user-attachments/assets/a98fe405-3281-4f37-8e94-62e5b91a9848" />
+<img width="1366" height="700" alt="SIEM 4" src="https://github.com/user-attachments/assets/9b9348fa-aa3a-4e17-a5d4-192758e1ea24" />
+<img width="1366" height="720" alt="SIEM 3" src="https://github.com/user-attachments/assets/10bae140-bdb1-458f-836b-67dd745fca8c" />
+<img width="1366" height="720" alt="SIEM 2" src="https://github.com/user-attachments/assets/73e0c763-7887-41b8-a843-23cd50c86f15" />
+<img width="1366" height="703" alt="SIEM 1" src="https://github.com/user-attachments/assets/36b855da-19f2-4415-bfeb-8266273fc79b" />
+
 --- 
 
 > **Note**: All sensitive data (IPs, hostnames) in screenshots/reports are synthetic.  
