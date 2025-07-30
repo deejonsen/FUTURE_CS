@@ -6,61 +6,94 @@ This repository presents a comprehensive overview of my contributions to Task 2 
 ---
 
 ## **🖥️ Task Overview**
-This task simulated the role of a SOC analyst handling security events. I configured and used a SIEM solution (Elastic Stack (ELK)) to detect abnormal activities like unauthorized access, brute force attempts, and malware infections. Logs were analyzed, alerts prioritized, and incident reports drafted.
+This task simulated the role of a SOC analyst handling security events. I configured and used a SIEM solution (Splunk) to detect abnormal activities like unauthorized access, brute force attempts, and malware infections. Logs were analyzed, alerts prioritized, and incident reports drafted.
 
 ---
 
 ## 🧰 Tools & Technologies
 
 - Splunk
-- Sample Log Datasets (Linux syslog, Apache logs)
+- Kali Linux
+- Sample Log Datasets
 - GitHub markdown for documentation
-- Google Docs for incident reports
+- MS Word for incident reports
 
 ---
 
 **Key Activities:**  
-- SIEM setup with Elastic Stack  
+- SIEM setup and Real-time log analysis with Splunk
 - Alert analysis (failed logins, malware, suspicious IPs)  
-- Incident prioritization & stakeholder communication  
-- Playbook-driven response simulation
-
-
-⚠️ **Example Alerts Monitored**
-
-| Alert Type	                     | Description	                           | Severity           | Action Taken                         |
-|----------------------------------|-----------------------------------------|--------------------|--------------------------------------|
-| Repeated failed logins           | Possible brute force from suspicious IP |	High	            | Account temporarily disabled         |
-| Access from unknown geo-location | Potential credential compromise         |	Medium	          |Logged alert and flagged account      |
-| Malware signature in logs	       | Detected outbound C2 traffic	           | Critical     	    |Triggered automated response playbook |
-
+- Detection of malware (Trojan, Rootkit)
+- Connection attempt monitoring
+- Alert severity classification
 
 ---
 
-### **Key Activities**  
+## 📌 Summary
 
-## 1. **SIEM Lab Setup**  
-- Deployed **Elastic Stack** (v8.9) via Docker:  
-  ```bash 
-  docker-compose -f elk-docker-compose.yml up -d
-  ```
-- Ingested sample datasets:  
-  - 10,000+ simulated logs (Windows events, firewall, DNS)  
-  - Attack scenarios: Brute-force, malware C2 traffic, data exfiltration  
-- Built Kibana dashboards:  
-  ![SOC Dashboard](screenshots/kibana_dashboard.png)  
+Multiple malware alerts and repeated authentication failures were identified across several internal user accounts and IP addresses. Public IP addresses were involved in both login activity and malware detections, suggesting the possibility of remote compromise and lateral movement.
 
 ---
 
-## 2. **Alert Analysis & Triage**  
-**Sample Alerts Investigated:**  
-| Alert Type          | Severity | Source IP       | Details |  
-|---------------------|----------|-----------------|---------|  
-| Failed Logins (100+) | High     | 185.63.92.11   | 15 distinct usernames in 2 mins |
-| Foreign IP Access	  |High      |	               | Suspected compromise |
-| Malware Found	      |Critical	 |                 | Immediate action required |
-| Malware Signature   | Critical | 10.5.22.103     | `Emotet` detected via Snort |  
-| Unusual Data Export | Medium   | 192.168.1.45    | 2GB PDF export at 3 AM |  
+## 🧪 Key Findings
+
+| Event Type            | Description                                          | Affected Users              | Impacted IPs           |
+|-----------------------|------------------------------------------------------|-----------------------------|-------------------------|
+| **Malware Detected**  | Various signatures including Trojan, Ransomware      | bob, alice, david, eve      | 198.51.100.42, 10.0.0.5 |
+| **Login Failures**    | Repeated failures from external IPs                  | bob, alice, david, charlie  | 203.0.113.77, 198.51.100.42 |
+| **Suspicious Access** | File access following malware detections             | bob, david, eve             | Mixed internal + external |
+
+---
+
+## ⚠️ Alerts & Prioritization
+
+| Alert Type                     | Severity  | Justification                                              |
+|--------------------------------|-----------|-------------------------------------------------------------|
+| Trojan Detected (multi-user)   | High      | Widespread infection observed across internal users         |
+| Ransomware Behavior            | Critical  | Flagged on user `bob`; potential data encryption detected   |
+| Rootkit Signature              | High      | Advanced threat; observed on `eve`, `alice`                 |
+| Login Failures from Public IP  | Medium    | Possible brute-force or credential stuffing attempt         |
+| File Access Post-Infection     | Medium    | Indicates possible data exfiltration                        |
+
+---
+
+## 📈 Event Timeline
+
+| Timestamp  | User    | IP Address     | Activity                        |
+|------------|---------|----------------|---------------------------------|
+| 04:18–04:41| alice   | Multiple       | Malware detection + file access |
+| 05:06      | bob     | 203.0.113.77   | Worm Infection Attempt          |
+| 06:21      | alice   | 203.0.113.77   | Login success after infection   |
+| 07:45      | charlie | 172.16.0.3     | Trojan alert                    |
+| 09:10      | bob     | 172.16.0.3     | Ransomware behavior             |
+
+---
+
+## 🧯 Incident Response Recommendations
+
+### 🔒 Mitigation
+- Isolate impacted systems immediately.
+- Disable user accounts for `bob`, `alice`, `charlie`, `david`, and `eve`.
+- Initiate malware scans and forensic review.
+
+### 🔍 Investigation
+- Correlate login timestamps with malware alert windows.
+- Identify if infected users accessed sensitive resources or executed binaries.
+
+### 🔐 Containment & Remediation
+- Block suspicious public IPs: `203.0.113.77`, `198.51.100.42`
+- Deploy network segmentation for vulnerable zones.
+- Patch known exploits and review endpoint configurations.
+
+---
+
+## ✅ Next Steps
+- Enable threat intelligence and geolocation enrichment in Splunk.
+- Configure correlation searches for multi-stage attack detection.
+- Build dashboards for real-time malware and login anomaly alerts.
+
+---
+
 
 **Prioritization Framework:**  
 ```mermaid
@@ -74,90 +107,41 @@ graph LR
 
 ---
 
-## 3. **Incident Response Simulation**  
-**Scenario: Credential Stuffing Attack**  
-- **Timeline**:  
-  ```bash
-  09:15: Alert triggered (50+ failed logins to HR portal)  
-  09:18: Verified attacker IP (Tor exit node)  
-  09:25: Blocked IP at firewall  
-  09:30: Initiated password resets for targeted accounts  
-  ```
-- **Stakeholder Communication Template**:  
-  ```markdown
-  [URGENT] Security Incident: HR Portal #INC-202  
-  **Impact**: 12 accounts targeted, 0 compromised  
-  **Actions Taken**:  
-    ✅ Attacker IP blocked  
-    ✅ Forced password resets for targeted users  
-  **Next Steps**:  
-    • Review geo-blocking rules for high-risk regions  
-    • Enable MFA for HR portal by EOD  
-  ```
+## **Incident Response Simulation** 🔥
+
+**Scenario**:  
+Over a 5-hour window on July 3rd, 2025, malware detections (Trojan, Rootkit, Ransomware) occurred across internal users and IPs. These alerts were paired with failed logins, suspicious external IP activity, and anomalous file access patterns—suggesting coordinated compromise attempts with possible lateral movement.
+
+**Detected Activities**:
+- Malware alerts from 5 user accounts
+- Login failures from suspicious external IPs
+- File access following infection
+- Ransomware signatures on user `bob`
+
+**Actions Taken**:
+- User sessions isolated
+- IP access blocked
+- Alerts escalated and enriched
+- Response report compiled and dashboard built for visibility
 
 ---
 
-## 4. **SOC Playbook Implementation**  
-**Malware Response Workflow** ([Full Playbook](playbooks/malware_outbreak_playbook.md)):  
-1. **Contain**: Isolate infected host from network  
-2. **Investigate**:  
-   - Review process tree via Elastic Agent  
-   - Check VirusTotal for file hashes  
-3. **Eradicate**: Deploy endpoint removal script  
-4. **Recover**: Restore from clean backup  
+## **SOC Playbook Implementation** ⚙️
 
----
-
-## **Deliverables Summary**  
-
-## 📄 [Incident Response Report](reports/incident_response_simulation.pdf)  
-- **Executive Summary**: 3 incidents handled (1 Critical, 2 High)  
-- **Threat Analysis**:  
-  | Threat Type       | Dwell Time | Data Impact |  
-  |-------------------|------------|-------------|  
-  | Credential Stuffing | 9 mins     | None        |  
-  | Emotet Infection  | 42 mins    | 3 files exfiltrated |  
-- **Improvement Recommendations**:  
-  - Deploy MFA to reduce credential attacks by 97%  
-  - Create automated IP blocklist for Tor nodes  
-
-## 📊 **SOC Dashboard Metrics**  
-- Mean Time to Detect (MTTD): **8 minutes**  
-- False Positive Rate: **22%** (optimized by tuning rules)  
-- Top Alert Sources:  
-  1. Failed RDP logins (41%)  
-  2. Unusual outbound traffic (33%)  
-
----
-
-## **Lessons Learned**  
-1. **Alert Fatigue**: 68% of medium-priority alerts were false positives → refined correlation rules.  
-2. **Context is Critical**: Geolocation data accelerated IP risk assessment (e.g., traffic from sanctions-violating countries).  
-3. **Playbook Gaps**: Needed pre-approved templates for legal/PR teams during data breach scenarios.  
-
----
-
-## **How to Reproduce This Lab**  
-1. Start ELK stack:  
-   ```bash 
-   git clone https://github.com/elastic/elastic-stack-demo 
-   cd elastic-stack-demo && docker-compose up -d
-   ```
-2. Import sample data:  
-   ```bash 
-   curl -X POST "localhost:9200/_bulk" -H "Content-Type: application/x-ndjson" --data-binary @sample_data/brute_force_logs.json
-   ```
-3. Load [Kibana dashboards](elk_config/kibana_dashboards/soc_overview.ndjson)  
-4. Trigger test alerts using `python3 simulate_attacks.py`  
+| Step                         | Action                                                                 |
+|------------------------------|------------------------------------------------------------------------|
+| **Detection**                | SPL searches flagged malware, failed logins, file access anomalies     |
+| **Triage**                   | Categorized alerts by severity and user risk                           |
+| **Investigation**            | Correlated events across time, user, and IPs to uncover attack vectors |
+| **Containment**              | Suggested isolation of infected hosts and user accounts                |
+| **Remediation**              | Malware scan initiated, user permissions revoked                       |
+| **Recovery & Monitoring**    | Real-time dashboard deployed, external IP alerts configured            |
+| **Documentation**            | Report filed (see below), queries saved, timeline logged               |
 
 ---
 
 **🔗 Attachments**:  
-- [Incident Response Report](reports/incident_response_simulation.pdf)  
-- [Credential Stuffing Playbook](playbooks/credential_storm_playbook.md)  
-- [Elastic Detection Rules](elk_config/alert_rules.ndjson)  
-
+- [Incident Response Report](reports/incident_response_simulation.pdf)
 --- 
 
 > **Note**: All sensitive data (IPs, hostnames) in screenshots/reports are synthetic.  
-> **References**: [Elastic Security Documentation](https://www.elastic.co/security) | [MITRE ATT&CK Framework](https://attack.mitre.org/)
