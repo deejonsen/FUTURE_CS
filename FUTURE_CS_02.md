@@ -154,6 +154,15 @@ Over a 5-hour window on July 3rd, 2025, malware detections (Trojan, Rootkit, Ran
 
 **🔗 Attachments**:  
 - [Incident Response Report](https://github.com/deejonsen/FUTURE_CS/blob/main/Incident%20Response%20Report.md)
+- <img width="1361" height="718" alt="Screenshot 2025-07-30 164124" src="https://github.com/user-attachments/assets/34d11d55-7668-4ef9-a5c1-8a2e1f64dff2" />
+<img width="1366" height="722" alt="Screenshot 2025-07-30 164101" src="https://github.com/user-attachments/assets/7c8b78c2-29d3-4d38-8cad-c7ac0e43be41" />
+<img width="1366" height="717" alt="Screenshot 2025-07-30 164012" src="https://github.com/user-attachments/assets/6ece9639-8e4a-4202-93c0-777fadeb9a03" />
+<img width="1366" height="722" alt="Screenshot 2025-07-30 163922" src="https://github.com/user-attachments/assets/33c3bacb-d314-4f3a-b288-8972785d7b7d" />
+<img width="1366" height="718" alt="Screenshot 2025-07-30 163808" src="https://github.com/user-attachments/assets/3fd3e453-e720-41fb-b76b-ee1ac18571f3" />
+<img width="1366" height="720" alt="Screenshot 2025-07-30 163730" src="https://github.com/user-attachments/assets/26b26d7a-fce4-4236-8326-49029ee856f0" />
+<img width="1366" height="719" alt="Screenshot 2025-07-30 163648" src="https://github.com/user-attachments/assets/456cdd8d-fb57-431d-898f-3f5218cdca68" />
+<img width="1366" height="710" alt="Screenshot 2025-07-30 163525" src="https://github.com/user-attachments/assets/ad24d01f-2f4e-4dee-b170-d3aa13d88ca3" />
+
 - <img width="1366" height="719" alt="SIEM 6" src="https://github.com/user-attachments/assets/8b55a4c9-f327-44de-a027-7a80d21321df" />
 <img width="1366" height="720" alt="SIEM 5" src="https://github.com/user-attachments/assets/a98fe405-3281-4f37-8e94-62e5b91a9848" />
 <img width="1366" height="700" alt="SIEM 4" src="https://github.com/user-attachments/assets/9b9348fa-aa3a-4e17-a5d4-192758e1ea24" />
