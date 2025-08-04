@@ -156,3 +156,13 @@ Cybersecurity Intern
 Location: Remote 
 
 ---
+
+![stored_xss_2](https://github.com/user-attachments/assets/e1860878-c676-4ce9-b42a-482ba1a2e953)
+![stored_xss_1](https://github.com/user-attachments/assets/8f822b83-f9ad-41df-a32b-c080aaad7ce3)
+![sql_injection_2](https://github.com/user-attachments/assets/e53d693d-6c7c-46f5-bf93-8e767ac03372)
+![sql_injection_1](https://github.com/user-attachments/assets/84ac35ab-72f2-4282-a6bf-c169823be01e)
+![reflected_xss_2](https://github.com/user-attachments/assets/30216fd3-1043-439f-9f47-32639d8d95e2)
+![reflected_xss_1](https://github.com/user-attachments/assets/7c48d351-ba7e-4f6e-87a0-c6705cb68dc5)
+![hacked](https://github.com/user-attachments/assets/44e03abc-c82e-4e40-ae0c-3e7143db6eeb)
+![csrf_attack_2](https://github.com/user-attachments/assets/a9d0e8af-7ddc-4683-815f-3a137750eb3c)
+![csrf_attack_1](https://github.com/user-attachments/assets/2eed319a-0aaa-450e-bb86-301020570ef1)
