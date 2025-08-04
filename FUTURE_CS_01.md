@@ -30,21 +30,18 @@ To systematically investigate common web application vulnerabilities within a co
 - **Impact**: Bypassed authentication mechanisms  
 - **OWASP Category**: A1 – Injection  
 - **Recommendation**: Implement parameterized queries and robust input validation  
-- ![SQL Injection Exploit](screenshots/sql_injection.png)
 
 ## 2. Reflected XSS
 - **Exploit**: `<script>alert('XSS')</script>`
 - **Impact**: Arbitrary JavaScript execution via user-controlled URL  
 - **OWASP Category**: A3 – Cross-Site Scripting  
 - **Recommendation**: Escape dynamic output, enforce Content Security Policy  
-- ![Reflected XSS](screenshots/reflected_xss.png)
 
 ## 3. Stored XSS
 - **Exploit**: `<img src=x onerror=alert('XSS')>`
 - **Impact**: Persistent script execution in user sessions  
 - **OWASP Category**: A3 – Cross-Site Scripting  
 - **Recommendation**: Sanitize all input and encode output consistently  
-- ![Stored XSS](screenshots/stored_xss.png)
 
 ## 4. Cross-Site Request Forgery (CSRF)
 - **Method**: Token replay exploiting predictable session state  
@@ -53,7 +50,6 @@ To systematically investigate common web application vulnerabilities within a co
 - **Impact**: Unauthorized password change without user knowledge  
 - **OWASP Category**: A5 – Broken Access Control  
 - **Recommendation**: Implement secure CSRF tokens, SameSite cookies, and origin validation  
-- ![CSRF Exploit](screenshots/csrf_attack.png)
 
 ---
 
@@ -102,8 +98,6 @@ To systematically investigate common web application vulnerabilities within a co
    docker run -v $(pwd):/zap/wrk -t owasp/zap2docker zap-baseline.py \  
    -t http://host.docker.internal:3000 -g gen.conf -r testreport.html
    ```  
-3. Use [Burp Suite](https://portswigger.net/burp) to intercept/modify requests.  
-
 ---
 
 ## 🔐 OWASP Top 10 Mapped Findings
